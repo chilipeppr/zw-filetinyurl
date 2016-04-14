@@ -35,7 +35,7 @@
                 "https://raw.githubusercontent.com/chilipeppr/claure/master/auto-generated-widget.html", //"?time=" + d.getTime(),
                 function() {
                     console.log("We are done instantiating the Claure Widget");
-                    return;
+                    // return;
                     alert("done loading claure widget but not initted");
                     cprequire(["inline:com-chilipeppr-widget-claure"], function(dashboard) {
                         console.log("Running " + dashboard.id);
@@ -48,6 +48,6 @@
 
                 });
         });
-    }, 5000);
+    }, 2000);
 
 })();
