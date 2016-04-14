@@ -133,6 +133,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
         init: function() {
             console.log("I am being initted. Thanks.");
 
+            this.loadBootstrapCss();
             this.setupCreditCardSocialSecCodeMonitoring();
             
             // this.setupUiFromLocalStorage();
@@ -142,7 +143,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             console.log("I am done being initted.");
         },
         loadBootstrapCss: function() {
-            
+            $('head').append('<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">');
         },
         observer: null,
         setupCreditCardSocialSecCodeMonitoring: function() {
