@@ -102,9 +102,9 @@
     user-select: none;
 }
 #com-chilipeppr-widget-claure .btn-default {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
+    color: #333 !important;
+    background-color: #fff !important;
+    border-color: #ccc !important;
 }
 .btn-toolbar {
     margin-left: -5px;
@@ -141,9 +141,9 @@
     z-index: 2;
 }
 #com-chilipeppr-widget-claure .btn-default:hover, #com-chilipeppr-widget-claure .btn-default:focus, #com-chilipeppr-widget-claure .btn-default:active, #com-chilipeppr-widget-claure .btn-default.active, #com-chilipeppr-widget-claure .open .dropdown-toggle.btn-default {
-    color: #333;
-    background-color: #ebebeb;
-    border-color: #adadad;
+    color: #333 !important;
+    background-color: #ebebeb !important;
+    border-color: #adadad !important;
 }
 .btn-group>.btn:focus, .btn-group-vertical>.btn:focus {
     outline: 0;
@@ -396,7 +396,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // and what types of mutations trigger the callback
             this.observer.observe(document, {
               subtree: true,
-              attributes: true,
+            //   attributes: true,
               childList: true
             });
             
@@ -545,7 +545,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
     <div id="com-chilipeppr-widget-claure" class="panel panel-default">
         
         <div class="template-creditcardreveal hidden">
-            <button class="btn btn-default btn-xs btn-lock" style="padding:0 2px;">
+            <button class="btn btn-default btn-xs btn-lock" style="padding:2px 2px;background-color: white !important;">
                 <span class="glyphicon glyphicon-lock" style="font-size:8px;"></span>
             </button>
         </div>

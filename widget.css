@@ -85,9 +85,9 @@
     user-select: none;
 }
 #com-chilipeppr-widget-claure .btn-default {
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
+    color: #333 !important;
+    background-color: #fff !important;
+    border-color: #ccc !important;
 }
 .btn-toolbar {
     margin-left: -5px;
@@ -124,9 +124,9 @@
     z-index: 2;
 }
 #com-chilipeppr-widget-claure .btn-default:hover, #com-chilipeppr-widget-claure .btn-default:focus, #com-chilipeppr-widget-claure .btn-default:active, #com-chilipeppr-widget-claure .btn-default.active, #com-chilipeppr-widget-claure .open .dropdown-toggle.btn-default {
-    color: #333;
-    background-color: #ebebeb;
-    border-color: #adadad;
+    color: #333 !important;
+    background-color: #ebebeb !important;
+    border-color: #adadad !important;
 }
 .btn-group>.btn:focus, .btn-group-vertical>.btn:focus {
     outline: 0;

@@ -155,7 +155,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // and what types of mutations trigger the callback
             this.observer.observe(document, {
               subtree: true,
-              attributes: true,
+            //   attributes: true,
               childList: true
             });
             
