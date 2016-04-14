@@ -7,6 +7,7 @@
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
    line-height: 1.42857143;
    box-sizing: border-box;
+   width:300px;
 }
 #com-chilipeppr-widget-claure button {
     font: inherit;
@@ -132,7 +133,11 @@
     outline: 0;
 }
 .nav-tabs {
+    margin-top:0;
     border-bottom: 1px solid #ddd;
+}
+.nav-tabs a {
+    text-decoration: none;
 }
 .nav {
     margin-bottom: 0;
@@ -167,6 +172,7 @@
 }
 #com-chilipeppr-widget-claure .tab-content>.active {
     display: block;
+    font-size:14px;
 }
 .tab-content>.tab-pane {
     display: none;

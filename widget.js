@@ -197,6 +197,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             var el = $(node);
             console.log("el:", el);
             if (el == null) return;
+            if (el.html() == null) return;
             
             txt = el.text();
             //if ('nodeValue' in node) txt = node.nodeValue;
