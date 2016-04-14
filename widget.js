@@ -135,6 +135,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
 
             // this.loadBootstrapCss();
             this.setupCreditCardSocialSecCodeMonitoring();
+            this.setupAfterHours();
             
             // this.setupUiFromLocalStorage();
             // this.btnSetup();
@@ -199,6 +200,70 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             
             el.val('SprintFreeMsg: ');
             console.log("onComposeBox. stuck SprintFreeMsg into textarea");
+            
+            // now check if after hours so we know to dim out the box or not
+            var isAfterHrs = this.isAfterHours();
+            if (isAfterHrs) {
+                el.attr("disabled", true); 
+            } else {
+                el.attr("disabled", false); 
+            }
+        },
+        isAfterHoursSetup: false,
+        setupAfterHours: function() {
+            if (!this.isAfterHoursSetup) {
+                $('.btn-testafterhours').click(this.isAfterHours.bind(this));
+            }
+        },
+        isAfterHours: function(event) {
+            // we determin true/false if if is after hours or not
+            var isAfter = false;
+            var isManual = false;
+            
+            // see if they are manually overriding to say it is after hours (for testing)
+            if ( $('.checkbox-afterhoursnosending').is(':checked')) {
+                console.log("isAfterHours. manually checked to mimic after hours");
+                isManual = true;
+                isAfter = true;
+            } else {
+                
+                // check hours
+                var d = new Date(); // current time
+                var hours = d.getHours();
+                var mins = d.getMinutes();
+                var day = d.getDay();
+                
+                console.log("isAfterHours. hours:", hours);
+            
+                // check between 7am et and 10pm et
+                if (hours >= 7 && hours <= 22) {
+                    console.log("isAfterHours. it is within the range");
+                }
+                // return day >= 1
+                //     && day <= 5
+                //     && hours >= 9 
+                //     && (hours < 17 || hours === 17 && mins <= 30);
+                
+            }
+            
+            // if it was manually triggered from a button press, update the settings widget
+            if (event) {
+                var outEl = $('.result-afterhours');
+                outEl.removeClass('hidden');
+                if (isManual) {
+                    outEl.text("You are mimicking it being after hours, so we will dim out compose box.");
+                } else if (isAfter) {
+                    outEl.text("It is currently after hours. Compose box dimmed out.");
+                } else {
+                    outEl.text("It is not after hours. Composing allowed.");
+                }
+                setTimeout(function() {
+                    outEl.addClass('hidden');
+                }, 5000);
+                    
+            }
+            
+            return isAfter;
         },
         detectCreditCardOnNode: function(node) {
             
