@@ -178,7 +178,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                  if ('addedNodes' in mutRec) {
                      for (var i2 = 0; i2 < mutRec.addedNodes.length; i2++) {
                          var addedNode = mutRec.addedNodes[i2];
-                         console.log("addedNode:", addedNode);
+                         //console.log("addedNode:", addedNode);
                          
                          // jquery-ize the addedNode to see if it is the compose box
                          var el = $(addedNode);
@@ -196,6 +196,8 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
         },
         onComposeBox: function(el) {
             console.log("onComposeBox. el:", el);
+            
+            el.val('SprintFreeMsg: ');
         },
         detectCreditCardOnNode: function(node) {
             
