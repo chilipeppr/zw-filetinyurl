@@ -670,9 +670,11 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // now check if after hours so we know to dim out the box or not
             var isAfterHrs = this.isAfterHours();
             if (isAfterHrs) {
+                console.log("onComposeBox. isAfterHrs so disabling compose box.");
                 el.attr("disabled", true);
                 el.txt("(Disabled due to after hours.)");
             } else {
+                console.log("onComposeBox. NOT isAfterHrs so enabling compose box.");
                 el.attr("disabled", false); 
             }
         },
