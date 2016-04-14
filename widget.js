@@ -188,10 +188,8 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                              this.onComposeBox(el);
                          }
                          
-                         var that = this;
-                         setTimeout(function() {
-                             that.detectCreditCardOnNode(addedNode);
-                         }, 100);
+                         this.detectCreditCardOnNode(addedNode);
+                         
                      }
                      
                      // call onComposeBox all the time just to catch any possible DOM change
