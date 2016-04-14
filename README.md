@@ -1,9 +1,9 @@
-# com-chilipeppr-widget-template
-This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github.
+# com-chilipeppr-widget-claure
+This example widget gives you a framework for creating your own widget. Please change this description once you fork this claure and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github.
 
 ![alt text](screenshot.png "Screenshot")
 
-## ChiliPeppr Widget / Template
+## ChiliPeppr Widget / claure
 
 All ChiliPeppr widgets/elements are defined using cpdefine() which is a method
 that mimics require.js. Each defined object must have a unique ID so it does
@@ -11,13 +11,13 @@ not conflict with other ChiliPeppr widgets.
 
 | Item                  | Value           |
 | -------------         | ------------- | 
-| ID                    | com-chilipeppr-widget-template |
-| Name                  | Widget / Template |
-| Description           | This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github. |
-| chilipeppr.load() URL | http://raw.githubusercontent.com/chilipeppr/widget-template/master/auto-generated-widget.html |
-| Edit URL              | http://ide.c9.io/chilipeppr/widget-template |
-| Github URL            | http://github.com/chilipeppr/widget-template |
-| Test URL              | https://preview.c9users.io/chilipeppr/widget-template/widget.html |
+| ID                    | com-chilipeppr-widget-claure |
+| Name                  | Widget / claure |
+| Description           | This example widget gives you a framework for creating your own widget. Please change this description once you fork this claure and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github. |
+| chilipeppr.load() URL | http://raw.githubusercontent.com/chilipeppr/claure/master/auto-generated-widget.html |
+| Edit URL              | http://ide.c9.io/chilipeppr/claure |
+| Github URL            | http://github.com/chilipeppr/claure |
+| Test URL              | https://preview.c9users.io/chilipeppr/claure/widget.html |
 
 ## Example Code for chilipeppr.load() Statement
 
@@ -29,20 +29,20 @@ back the instance of it.
 
 ```javascript
 // Inject new div to contain widget or use an existing div with an ID
-$("body").append('<' + 'div id="myDivWidgetTemplate"><' + '/div>');
+$("body").append('<' + 'div id="myDivWidgetClaure"><' + '/div>');
 
 chilipeppr.load(
-  "#myDivWidgetTemplate",
-  "http://raw.githubusercontent.com/chilipeppr/widget-template/master/auto-generated-widget.html",
+  "#myDivWidgetClaure",
+  "http://raw.githubusercontent.com/chilipeppr/claure/master/auto-generated-widget.html",
   function() {
-    // Callback after widget loaded into #myDivWidgetTemplate
+    // Callback after widget loaded into #myDivWidgetClaure
     // Now use require.js to get reference to instantiated widget
     cprequire(
-      ["inline:com-chilipeppr-widget-template"], // the id you gave your widget
-      function(myObjWidgetTemplate) {
+      ["inline:com-chilipeppr-widget-claure"], // the id you gave your widget
+      function(myObjWidgetClaure) {
         // Callback that is passed reference to the newly loaded widget
-        console.log("Widget / Template just got loaded.", myObjWidgetTemplate);
-        myObjWidgetTemplate.init();
+        console.log("Widget / claure just got loaded.", myObjWidgetClaure);
+        myObjWidgetClaure.init();
       }
     );
   }
@@ -64,7 +64,7 @@ To better understand how ChiliPeppr's subscribe() method works see amplify.js's 
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>/com-chilipeppr-widget-template/onExampleGenerate</td><td>Example: Publish this signal when we go to generate gcode.</td></tr>    
+      <tr valign="top"><td>/com-chilipeppr-widget-claure/onExampleGenerate</td><td>Example: Publish this signal when we go to generate gcode.</td></tr>    
       </tbody>
   </table>
 
@@ -132,12 +132,13 @@ The table below shows, in order, the methods and properties inside the widget/el
           </tr>
       </thead>
       <tbody>
-      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-widget-template"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Widget / Template"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"This example widget gives you a framework for creating your own widget. Please change this description once you fork this template and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/chilipeppr/widget-template/master/auto-generated-widget.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/chilipeppr/widget-template"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/chilipeppr/widget-template"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://widget-template-chilipeppr.c9users.io/widget.html"</td></tr><tr valign="top"><td>publish</td><td>object</td><td>Please see docs above.<br><br>Define the publish signals that this widget/element owns or defines so that
+      <tr valign="top"><td>id</td><td>string</td><td>"com-chilipeppr-widget-claure"<br><br>The ID of the widget. You must define this and make it unique.</td></tr><tr valign="top"><td>name</td><td>string</td><td>"Widget / claure"</td></tr><tr valign="top"><td>desc</td><td>string</td><td>"This example widget gives you a framework for creating your own widget. Please change this description once you fork this claure and create your own widget. Make sure to run runme.js every time you are done editing your code so you can regenerate your README.md file, regenerate your auto-generated-widget.html, and automatically push your changes to Github."</td></tr><tr valign="top"><td>url</td><td>string</td><td>"http://raw.githubusercontent.com/chilipeppr/claure/master/auto-generated-widget.html"</td></tr><tr valign="top"><td>fiddleurl</td><td>string</td><td>"http://ide.c9.io/chilipeppr/claure"</td></tr><tr valign="top"><td>githuburl</td><td>string</td><td>"http://github.com/chilipeppr/claure"</td></tr><tr valign="top"><td>testurl</td><td>string</td><td>"http://claure-chilipeppr.c9users.io/widget.html"</td></tr><tr valign="top"><td>publish</td><td>object</td><td>Please see docs above.<br><br>Define the publish signals that this widget/element owns or defines so that
 other widgets know how to subscribe to them and what they do.</td></tr><tr valign="top"><td>subscribe</td><td>object</td><td>Please see docs above.<br><br>Define the subscribe signals that this widget/element owns or defines so that
 other widgets know how to subscribe to them and what they do.</td></tr><tr valign="top"><td>foreignPublish</td><td>object</td><td>Please see docs above.<br><br>Document the foreign publish signals, i.e. signals owned by other widgets
 or elements, that this widget/element publishes to.</td></tr><tr valign="top"><td>foreignSubscribe</td><td>object</td><td>Please see docs above.<br><br>Document the foreign subscribe signals, i.e. signals owned by other widgets
 or elements, that this widget/element subscribes to.</td></tr><tr valign="top"><td>init</td><td>function</td><td>function () <br><br>All widgets should have an init method. It should be run by the
-instantiating code like a workspace or a different widget.</td></tr><tr valign="top"><td>btnSetup</td><td>function</td><td>function () <br><br>Call this method from init to setup all the buttons when this widget
+instantiating code like a workspace or a different widget.</td></tr><tr valign="top"><td>observer</td><td>object</td><td></td></tr><tr valign="top"><td>setupCreditCardSocialSecCodeMonitoring</td><td>function</td><td>function () </td></tr><tr valign="top"><td>onObserver</td><td>function</td><td>function (mutations, observer) </td></tr><tr valign="top"><td>isInitted</td><td>boolean</td><td>The methods below were taken from the Dashboard made for Telerx but has good utility functions.
+We will likely eventually just remove all of these methods.</td></tr><tr valign="top"><td>dashboardCard</td><td>object</td><td></td></tr><tr valign="top"><td>sessionkey</td><td>object</td><td></td></tr><tr valign="top"><td>dashboardInit</td><td>function</td><td>function (options) </td></tr><tr valign="top"><td>setupWindowUrl</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setupPushHistory</td><td>function</td><td>function () </td></tr><tr valign="top"><td>addPushHistory</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setupHeader</td><td>function</td><td>function () </td></tr><tr valign="top"><td>onClickHdrMenu</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>onHideHdrMenu</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setupAddAcctDialog</td><td>function</td><td>function () </td></tr><tr valign="top"><td>onAddAcctDlgBlurLogin</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>onAddAcctDlgBlurFocusSessionkey</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>onAddAcctDlgAttemptLogin</td><td>function</td><td>function (phone, pass, callback) </td></tr><tr valign="top"><td>onAddAcctDlgClickAdd</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>userGet</td><td>function</td><td>function (sessionkey, callback) </td></tr><tr valign="top"><td>addSessionkeyToLocalStorage</td><td>function</td><td>function (phone, sessionkey) </td></tr><tr valign="top"><td>removeSessionkeyFromLocalStorage</td><td>function</td><td>function (sessionkey) </td></tr><tr valign="top"><td>onRemoveAll</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setAddAcctDlgErr</td><td>function</td><td>function (errtxt) </td></tr><tr valign="top"><td>setAddAcctDlgMsg</td><td>function</td><td>function (txt) </td></tr><tr valign="top"><td>onAddAcctDlgClickAdvanced</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>onOpenAddAcct</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>onCloseAddAcct</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>resizeTimeout</td><td>object</td><td></td></tr><tr valign="top"><td>setupOnResize</td><td>function</td><td>function () </td></tr><tr valign="top"><td>lastWidth</td><td>object</td><td></td></tr><tr valign="top"><td>lastHeight</td><td>object</td><td></td></tr><tr valign="top"><td>onResize</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>formatGlobalUnreadCtr</td><td>function</td><td>function () </td></tr><tr valign="top"><td>isScrollbarInBody</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setSettingsWithCallback</td><td>function</td><td>function (settings, sessionkey, callback) </td></tr><tr valign="top"><td>addSessionkeyToRemoteStorage</td><td>function</td><td>function (phone, sessionkey2) </td></tr><tr valign="top"><td>removeSessionkeyFromRemoteStorage</td><td>function</td><td>function (phoneToRemove)  //, sessionkeyToRemove) {</td></tr><tr valign="top"><td>getSettingsFromRemoteStorage</td><td>function</td><td>function (sessionkey, callback, nosettingscallback) </td></tr><tr valign="top"><td>cards</td><td>object</td><td></td></tr><tr valign="top"><td>setupCards</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setupCardsViaLocalStorage</td><td>function</td><td>function () </td></tr><tr valign="top"><td>formatPhone</td><td>function</td><td>function (phone, sessionkey, callback) </td></tr><tr valign="top"><td>createCard</td><td>function</td><td>function (skey, isLocal) </td></tr><tr valign="top"><td>onClickDashCardMenu</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>onHideDashCardMenu</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setupCardsViaRemoteStorage</td><td>function</td><td>function () </td></tr><tr valign="top"><td>setupDeeplink</td><td>function</td><td>function (sessionkey) </td></tr><tr valign="top"><td>setupDeeplinkOnMouseover</td><td>function</td><td>function (obj) </td></tr><tr valign="top"><td>onMouseoverDeeplink</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>getDeeplink</td><td>function</td><td>function (sessionkey) </td></tr><tr valign="top"><td>onDeeplinkClick</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>setupQuery</td><td>function</td><td>function () </td></tr><tr valign="top"><td>onQueryClick</td><td>function</td><td>function (evt) </td></tr><tr valign="top"><td>totalUnreadCtr</td><td>number</td><td></td></tr><tr valign="top"><td>queryAllKeys</td><td>function</td><td>function (callback) </td></tr><tr valign="top"><td>updateQueryStatus</td><td>function</td><td>function () </td></tr><tr valign="top"><td>timeDifference</td><td>function</td><td>function (current, previous) </td></tr><tr valign="top"><td>loadDashboardCard</td><td>function</td><td>function (callback) </td></tr><tr valign="top"><td>btnSetup</td><td>function</td><td>function () <br><br>Call this method from init to setup all the buttons when this widget
 is first loaded. This basically attaches click events to your 
 buttons. It also turns on all the bootstrap popovers by scanning
 the entire DOM of the widget.</td></tr><tr valign="top"><td>onHelloBtnClick</td><td>function</td><td>function (evt) <br><br>onHelloBtnClick is an example of a button click event callback</td></tr><tr valign="top"><td>options</td><td>object</td><td>User options are available in this property for reference by your
