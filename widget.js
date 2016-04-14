@@ -251,9 +251,15 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                 // dialogEl.css('left', event.currentTarget.offsetLeft);
                 // dialogEl.css('top', event.currentTarget.offsetTop);
             // }
-            var widgetOffset = dialogEl.offset();
-            dialogEl.css('left', widgetOffset - event.pageX + 20);
-            dialogEl.css('top', widgetOffset - event.pageY);
+            
+            // get position on page of this widget
+            var widgetOffset = $('#' + this.id).offset();
+            console.log("widgetOffset:", widgetOffset);
+            var newLeft =  widgetOffset.left - event.pageX + 20;
+            var newTop = widgetOffset.top - event.pageY;
+            console.log("newTop:", newTop, "newLeft:", newLeft);
+            dialogEl.css('left', newLeft);
+            dialogEl.css('top', newTop);
             dialogEl.removeClass('hidden');
             
             // reset bad password
