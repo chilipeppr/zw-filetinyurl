@@ -161,14 +161,17 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             });
             
             // test portion
-            // setTimeout(function() {
-            //     $('#com-chilipeppr-widget-claure-tab1').append("<div>modifying dom to see if we get event</div>");
-            // }, 1000);
-            // setTimeout(function() {
-            //     $('#com-chilipeppr-widget-claure-tab1').append("<p>1234123412341234</p>");
-            //     $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 4545</span>");
-            //     $('#com-chilipeppr-widget-claure-tab1').append("<div>1234-1234-1234-9999</div>");
-            // }, 2000);
+            setTimeout(function() {
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>modifying dom to see if we get event</div>");
+            }, 1000);
+            setTimeout(function() {
+                $('#com-chilipeppr-widget-claure-tab1').append("<p>1234123412341234</p>");
+                $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 4545</span>");
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>1234-1234-1234-9999</div>");
+            }, 2000);
+            setTimeout(function() {
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>297-73-0844 is sample ssn</div>");
+            }, 3000);
         },
         onObserver: function(mutations, observer) {
             // fired when a mutation occurs
@@ -329,7 +332,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                 
                 // build asterisks
                 var aster = cc.substring(0, cc.length - 4);
-                aster = aster.replace(/\d/, "*");
+                aster = aster.replace(/\d/g, "*");
                 var replaceWith = aster + cclast4 + " " + lockEl.html();
                 var newHtml = el.html().replace(cc, replaceWith);
                 el.html(newHtml);

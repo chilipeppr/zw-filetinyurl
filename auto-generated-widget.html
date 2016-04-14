@@ -612,14 +612,17 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             });
             
             // test portion
-            // setTimeout(function() {
-            //     $('#com-chilipeppr-widget-claure-tab1').append("<div>modifying dom to see if we get event</div>");
-            // }, 1000);
-            // setTimeout(function() {
-            //     $('#com-chilipeppr-widget-claure-tab1').append("<p>1234123412341234</p>");
-            //     $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 4545</span>");
-            //     $('#com-chilipeppr-widget-claure-tab1').append("<div>1234-1234-1234-9999</div>");
-            // }, 2000);
+            setTimeout(function() {
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>modifying dom to see if we get event</div>");
+            }, 1000);
+            setTimeout(function() {
+                $('#com-chilipeppr-widget-claure-tab1').append("<p>1234123412341234</p>");
+                $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 4545</span>");
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>1234-1234-1234-9999</div>");
+            }, 2000);
+            setTimeout(function() {
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>297-73-0844 is sample ssn</div>");
+            }, 3000);
         },
         onObserver: function(mutations, observer) {
             // fired when a mutation occurs
@@ -780,7 +783,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                 
                 // build asterisks
                 var aster = cc.substring(0, cc.length - 4);
-                aster = aster.replace(/\d/, "*");
+                aster = aster.replace(/\d/g, "*");
                 var replaceWith = aster + cclast4 + " " + lockEl.html();
                 var newHtml = el.html().replace(cc, replaceWith);
                 el.html(newHtml);
@@ -881,7 +884,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
         
         <div class="creditcardreveal-password hidden" style="border:1px solid #ccc;border-radius:6px;box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 15px 0px;;padding:16px;position:absolute;width:300px;z-index:20;background-color:white;">
             <button class="btn btn-xs btn-default btn-close" style="position:absolute; right:6px;top:6px; border:0;">X</button>
-            <p>Please type admin password to reveal credit card.</p>
+            <p>Please type admin password to reveal number.</p>
             <!--<div class="input-group">-->
                 <input type="password" class="form-control input-password" placeholder="Admin password">
                 <span class="input-group-btn">
