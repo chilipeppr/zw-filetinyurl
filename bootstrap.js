@@ -36,7 +36,7 @@
                 function() {
                     console.log("We are done instantiating the Claure Widget");
                     // return;
-                    alert("done loading claure widget but not initted");
+                    // alert("done loading claure widget but not initted");
                     cprequire(["inline:com-chilipeppr-widget-claure"], function(dashboard) {
                         console.log("Running " + dashboard.id);
 
