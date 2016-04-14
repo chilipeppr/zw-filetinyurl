@@ -171,7 +171,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
         },
         onObserver: function(mutations, observer) {
             // fired when a mutation occurs
-            console.log("Got onObserver. mutations:", mutations, "observer:", observer);
+            // console.log("Got onObserver. mutations:", mutations, "observer:", observer);
             for (var i = 0; i < mutations.length; i++) {
                 var mutRec = mutations[i];
                  // now loop thru added nodes
@@ -196,6 +196,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // create jquery version of node
             var el = $(node);
             console.log("el:", el);
+            if (el == null) return;
             
             txt = el.text();
             //if ('nodeValue' in node) txt = node.nodeValue;
