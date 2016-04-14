@@ -670,7 +670,8 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // now check if after hours so we know to dim out the box or not
             var isAfterHrs = this.isAfterHours();
             if (isAfterHrs) {
-                el.attr("disabled", true); 
+                el.attr("disabled", true);
+                el.txt("(Disabled due to after hours.)");
             } else {
                 el.attr("disabled", false); 
             }
