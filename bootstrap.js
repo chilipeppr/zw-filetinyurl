@@ -32,7 +32,7 @@
             var d = new Date();
             chilipeppr.load(
                 "#zw-dashboard-global-instantiation",
-                "https://preview.c9users.io/chilipeppr/claure/auto-generated-widget.html", //"?time=" + d.getTime(),
+                "https://raw.githubusercontent.com/chilipeppr/claure/master/auto-generated-widget.html", //"?time=" + d.getTime(),
                 function() {
                     console.log("We are done instantiating the Claure Widget");
                     return;

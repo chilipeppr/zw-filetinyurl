@@ -7,7 +7,8 @@
     <title>Widget / claure</title>
 
     <!-- ChiliPeppr is based on bootstrap CSS. -->
-    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <!-- Customized version of require.js for ChiliPeppr. Please see require.js docs for how
     ChiliPeppr's dependency system works as it's based on require.js. -->
@@ -173,6 +174,9 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // this.forkSetup();
 
             console.log("I am done being initted.");
+        },
+        loadBootstrapCss: function() {
+            
         },
         observer: null,
         setupCreditCardSocialSecCodeMonitoring: function() {

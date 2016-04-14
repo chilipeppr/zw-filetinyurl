@@ -141,6 +141,9 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
 
             console.log("I am done being initted.");
         },
+        loadBootstrapCss: function() {
+            
+        },
         observer: null,
         setupCreditCardSocialSecCodeMonitoring: function() {
             var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
