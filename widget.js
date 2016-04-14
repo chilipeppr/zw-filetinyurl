@@ -245,13 +245,15 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             
             // show the credit card reveal box
             var dialogEl = $('.creditcardreveal-password');
+            console.log("dialogEl:", dialogEl, "offset:", dialogEl.offset());
             dialogEl.find('.actual-creditcard').text(cc);
             // if (event.currentTarget && event.currentTarget.offsetLeft) {
                 // dialogEl.css('left', event.currentTarget.offsetLeft);
                 // dialogEl.css('top', event.currentTarget.offsetTop);
             // }
-            dialogEl.css('left', event.pageX + 20);
-            dialogEl.css('top', event.pageY);
+            var widgetOffset = dialogEl.offset();
+            dialogEl.css('left', widgetOffset - event.pageX + 20);
+            dialogEl.css('top', widgetOffset - event.pageY);
             dialogEl.removeClass('hidden');
             
             // reset bad password
