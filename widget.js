@@ -184,7 +184,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                          // jquery-ize the addedNode to see if it is the compose box
                          var el = $(addedNode);
                          if (el && el.hasClass('zw-send-message-text')) {
-                             console.log("got a compose box. el:", el);
+                            //  console.log("got a compose box. el:", el);
                              this.onComposeBox(el);
                          }
                          
@@ -201,7 +201,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
         },
         composeBoxEl: null,
         onComposeBox: function(el) {
-            console.log("onComposeBox. el:", el);
+            // console.log("onComposeBox. el:", el);
             
             // we only get the compose box element once at the start
             // so store it
@@ -214,7 +214,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             if (el == null) return;
             
             el.val('SprintFreeMsg: ');
-            console.log("onComposeBox. stuck SprintFreeMsg into textarea");
+            // console.log("onComposeBox. stuck SprintFreeMsg into textarea");
             
             // now check if after hours so we know to dim out the box or not
             var isAfterHrs = this.isAfterHours();
@@ -251,11 +251,12 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                 var mins = d.getMinutes();
                 var day = d.getDay();
                 
-                console.log("isAfterHours. hours:", hours);
+                // console.log("isAfterHours. hours:", hours);
             
                 // check between 7am et and 10pm et
                 if (hours >= 7 && hours <= 20) {
                     console.log("isAfterHours. it is within the range");
+                    isAfter = true;
                 }
                 // return day >= 1
                 //     && day <= 5
