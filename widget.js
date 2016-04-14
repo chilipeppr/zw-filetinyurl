@@ -255,8 +255,8 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // get position on page of this widget
             var widgetOffset = $('#' + this.id).offset();
             console.log("widgetOffset:", widgetOffset);
-            var newLeft =  widgetOffset.left - event.pageX + 20;
-            var newTop = widgetOffset.top - event.pageY;
+            var newLeft =  event.pageX - widgetOffset.left;
+            var newTop = event.pageY - widgetOffset.top;
             console.log("newTop:", newTop, "newLeft:", newLeft);
             dialogEl.css('left', newLeft);
             dialogEl.css('top', newTop);
