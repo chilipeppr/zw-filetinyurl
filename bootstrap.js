@@ -15,7 +15,9 @@
 
     console.log("Loading require.js");
     //load("http://www.chilipeppr.com/js/require.js");
-    load("//i2dcui.appspot.com/js/ssl_require.js");
+    //load("//i2dcui.appspot.com/js/ssl_require.js");
+    // //i2dcui.appspot.com/js/require.js
+    load("//i2dcui.appspot.com/js/require.js");
 
     setTimeout(function() {
         // alert("Loading Claure Widget");
@@ -26,7 +28,7 @@
             console.log(chilipeppr);
             var dashEl = $('<div id="zw-dashboard-global-instantiation"></div>');
             $('body').append(dashEl);
-            return;
+            // return;
             var d = new Date();
             chilipeppr.load(
                 "#zw-dashboard-global-instantiation",
