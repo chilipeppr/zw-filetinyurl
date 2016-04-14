@@ -158,11 +158,12 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // test portion
             setTimeout(function() {
                 $('#com-chilipeppr-widget-claure-tab1').append("<div>modifying dom to see if we get event</div>");
-            }, 4000);
+            }, 1000);
             setTimeout(function() {
                 $('#com-chilipeppr-widget-claure-tab1').append("<p>1234123412341234</p>");
-                $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 1234</span>");
-            }, 5000);
+                $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 4545</span>");
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>1234-1234-1234-9999</div>");
+            }, 2000);
         },
         onObserver: function(mutations, observer) {
             // fired when a mutation occurs
@@ -207,20 +208,85 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // 1234-1234-1234-1234
             console.log("starting detectCreditCard with txt:", txt);
 
-            if (txt.match(/(\d{16,16})/)) { 
+            if (txt.match(/(\d{16,16})/) || txt.match(/(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})/)) { 
                 
                 // we found a credit card
                 isDidWeDetect = true;
                 var cc = RegExp.$1;
-                var cclast4 = cc.substring(12, 16);
-                var newHtml = el.html().replace(/\d{16,16}/, "************" + cclast4);
+                var cclast4 = cc.substring(cc.length - 4, cc.length);
+                
+                // get template of lock button to swap in
+                var lockEl = $('.template-creditcardreveal').clone();
+                lockEl.removeClass('hidden').addClass("dynamic-creditcardreveal");
+                
+                var replaceWith = "************" + cclast4 + " " + lockEl.html();
+                var newHtml = el.html().replace(cc, replaceWith);
                 el.html(newHtml);
                 
-            } else if (txt.match(/\d{4}[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{4}/)) {
+                // now attach button click event
+                el.find('.btn-lock').click(cc, this.onShowCreditCardReveal.bind(this));
                 
-            } 
+            }
+            
             console.log("ending detectCreditCard with txt:", txt);
             return txt;
+        },
+        isCreditCardRevealDialogSetup: false,
+        onShowCreditCardReveal: function(event) {
+            console.log("onShowCreditCardReveal. event.data:", event.data, "event:", event);
+            
+            var cc = event.data;
+            
+            // show the credit card reveal box
+            var dialogEl = $('.creditcardreveal-password');
+            dialogEl.find('.actual-creditcard').text(cc);
+            dialogEl.css('left', event.clientX);
+            dialogEl.css('top', event.clientY);
+            dialogEl.removeClass('hidden');
+            
+            // reset bad password
+            var badPassEl = dialogEl.find('.creditcardreveal-badpassword');
+            badPassEl.addClass('hidden');
+            
+            // ensure the actual credit card div is hidden
+            var actualCcardEl = dialogEl.find('.actual-creditcard');
+            actualCcardEl.addClass('hidden');
+            
+            // see if this is the 1st time we've loaded the dialog
+            if (!this.isCreditCardRevealDialogSetup) {
+                dialogEl.find('.btn-reveal').click(this.onCreditCardRevealVerifyPassword.bind(this));
+                dialogEl.find('.btn-close').click(function() {
+                    // reset everything
+                    dialogEl.addClass("hidden");
+                    dialogEl.find('.actual-creditcard').addClass('hidden');
+                    dialogEl.find(".input-password").val("");
+                    dialogEl.find('.creditcardreveal-badpassword').addClass("hidden");
+                })
+                this.isCreditCardRevealDialogSetup = true;
+            }
+        },
+        onCreditCardRevealVerifyPassword: function(event) {
+            console.log("onCreditCardRevealVerifyPassword");
+            
+            var dialogEl = $('.creditcardreveal-password');
+            var password = dialogEl.find(".input-password").val();
+            
+            if (password == "valencia") {
+                // the password was good.
+                var actualCcardEl = dialogEl.find('.actual-creditcard');
+                actualCcardEl.removeClass('hidden');
+                // hide the bad password alert just in case
+                var badPassEl = dialogEl.find('.creditcardreveal-badpassword');
+                badPassEl.addClass('hidden');
+            } else {
+                // the password was bad
+                console.log("password was bad");
+                var badPassEl = dialogEl.find('.creditcardreveal-badpassword');
+                badPassEl.addClass('hidden');
+                setTimeout(function() {
+                    badPassEl.removeClass('hidden');
+                }, 500);
+            }
         },
         /**
          * The methods below were taken from the Dashboard made for Telerx but has good utility functions.
