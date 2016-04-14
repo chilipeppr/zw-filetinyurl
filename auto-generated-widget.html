@@ -764,10 +764,10 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // 1234-1234-1234-1234
             console.log("starting detectCreditCard with txt:", txt);
 
-            if (txt.match(/(\d{16,16})/) 
-                || txt.match(/(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})/) 
-                || txt.match(/(\d{9,9})/) 
-                || txt.match(/(\d{3,3}[\s\-]\d{2,2}[\s\-]\d{4,4})/)) { 
+            if (txt.match(/\b(\d{16,16})\b/) 
+                || txt.match(/\b(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})\b/) 
+                || txt.match(/\b(\d{9,9})\b/) 
+                || txt.match(/\b(\d{3,3}[\s\-]\d{2,2}[\s\-]\d{4,4})\b/)) { 
                 
                 // we found a credit card
                 isDidWeDetect = true;
@@ -778,7 +778,10 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                 var lockEl = $('.template-creditcardreveal').clone();
                 lockEl.removeClass('hidden').addClass("dynamic-creditcardreveal");
                 
-                var replaceWith = "************" + cclast4 + " " + lockEl.html();
+                // build asterisks
+                var aster = cc.substring(0, cc.length - 4);
+                aster = aster.replace(/\d/, "*");
+                var replaceWith = aster + cclast4 + " " + lockEl.html();
                 var newHtml = el.html().replace(cc, replaceWith);
                 el.html(newHtml);
                 
