@@ -2,12 +2,21 @@
 
 #com-chilipeppr-widget-claure {
    position: absolute;
-   right:20px;
-   bottom:20px;
+   top:0px;
+   left:0px;
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
    line-height: 1.42857143;
    box-sizing: border-box;
-   width:300px;
+   width:100%;
+   height:100%;
+   background-color: transparent;
+   z-index: -1;
+}
+#com-chilipeppr-widget-claure .panel-wrapper {
+    position: absolute;
+    bottom:20px;
+    right:20px;
+    width:300px;
 }
 #com-chilipeppr-widget-claure button {
     font: inherit;

@@ -68,7 +68,7 @@ cprequire_test(["inline:com-chilipeppr-widget-claure"], function(myWidget) {
 
     // init my widget
     myWidget.init();
-    $('#' + myWidget.id).css('margin', '20px');
+    // $('#' + myWidget.id).css('margin', '20px');
     $('title').html(myWidget.name);
 
 } /*end_test*/ );

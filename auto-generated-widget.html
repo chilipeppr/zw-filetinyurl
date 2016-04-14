@@ -19,12 +19,21 @@
 
 #com-chilipeppr-widget-claure {
    position: absolute;
-   right:20px;
-   bottom:20px;
+   top:0px;
+   left:0px;
    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
    line-height: 1.42857143;
    box-sizing: border-box;
-   width:300px;
+   width:100%;
+   height:100%;
+   background-color: transparent;
+   z-index: -1;
+}
+#com-chilipeppr-widget-claure .panel-wrapper {
+    position: absolute;
+    bottom:20px;
+    right:20px;
+    width:300px;
 }
 #com-chilipeppr-widget-claure button {
     font: inherit;
@@ -315,7 +324,7 @@ cprequire_test(["inline:com-chilipeppr-widget-claure"], function(myWidget) {
 
     // init my widget
     myWidget.init();
-    $('#' + myWidget.id).css('margin', '20px');
+    // $('#' + myWidget.id).css('margin', '20px');
     $('title').html(myWidget.name);
 
 } /*end_test*/ );
@@ -552,7 +561,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
 </head>
 
 <body>
-    <div id="com-chilipeppr-widget-claure" class="panel panel-default">
+    <div id="com-chilipeppr-widget-claure" class="">
         
         <div class="template-creditcardreveal hidden">
             <button class="btn btn-default btn-xs btn-lock" style="padding:2px 2px;">
@@ -573,60 +582,63 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             <p class="actual-creditcard well hidden" style="margin:10px 0 0 0;padding:10px;">3333444400001111</p>
         </div>
         
-        <div class="panel-heading ">
-
-            <div class="btn-toolbar pull-right hidden" role="toolbar">
-                <div class="btn-group">
-                    <button type="button" class="btn btn-xs btn-default btn-sayhello" data-delay="1000" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Say Hello" data-content="Generate a hello message">Say Hello
-                    </button>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-xs btn-default hidebody"><span class="glyphicon glyphicon-chevron-up"></span>
-                    </button>
-                </div>
-                <div class="btn-group">
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
-                    </div>
-                </div>
-            </div> <span class="panel-title" data-toggle="popover">Settings Widget</span> <span style="font-size:9px;" class="fb-build">v1</span>
-
-        </div>
-        <div class="panel-body">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="active"><a href="#com-chilipeppr-widget-claure-tab1" role="tab" data-toggle="tab">Privacy</a>
-                </li>
-                <li><a href="#com-chilipeppr-widget-claure-tab2" role="tab" data-toggle="tab">Prefix</a></li>
-                <li><a href="#com-chilipeppr-widget-claure-tab3" role="tab" data-toggle="tab">Blocking</a></li>
-            </ul>
-            <!-- Tab panes -->
-
-            <div class="tab-content">
+        <div class="panel-wrapper panel panel-default">
+            
+            <div class="panel-heading ">
     
-                <!-- Tab 1 -->
-                <div class="tab-pane active" id="com-chilipeppr-widget-claure-tab1">
-                    <p>All credit card and social security numbers will be hidden. Click the lock icon and type in admin password to reveal.</p>
-                    <!--<div class="">-->
-                    <!--    <button type="button" class="btn btn-xs btn-default btn-helloworld2" style="margin: 4px 0;">Hello World 2</button>-->
-                    <!--</div>-->
-                </div>
-
-                <!-- Tab 2 -->
-                <div class="tab-pane" id="com-chilipeppr-widget-claure-tab2">
-                    <p>SprintFreeMsg: will be prepended to every outbound message.</p>
-                </div>
-
-                <!-- Tab 3 -->
-                <div class="tab-pane" id="com-chilipeppr-widget-claure-tab3">
-                    <p>This is the content of tab 3.</p>
-                </div>
-
+                <div class="btn-toolbar pull-right hidden" role="toolbar">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-xs btn-default btn-sayhello" data-delay="1000" data-animation="true" data-placement="auto" data-container="body" data-trigger="hover" data-title="Say Hello" data-content="Generate a hello message">Say Hello
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-xs btn-default hidebody"><span class="glyphicon glyphicon-chevron-up"></span>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-xs btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+                        </div>
+                    </div>
+                </div> <span class="panel-title" data-toggle="popover">Settings Widget</span> <span style="font-size:9px;" class="fb-build">v1</span>
+    
             </div>
-
-        </div>
+            <div class="panel-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#com-chilipeppr-widget-claure-tab1" role="tab" data-toggle="tab">Privacy</a>
+                    </li>
+                    <li><a href="#com-chilipeppr-widget-claure-tab2" role="tab" data-toggle="tab">Prefix</a></li>
+                    <li><a href="#com-chilipeppr-widget-claure-tab3" role="tab" data-toggle="tab">Blocking</a></li>
+                </ul>
+                <!-- Tab panes -->
+    
+                <div class="tab-content">
+        
+                    <!-- Tab 1 -->
+                    <div class="tab-pane active" id="com-chilipeppr-widget-claure-tab1">
+                        <p>All credit card and social security numbers will be hidden. Click the lock icon and type in admin password to reveal.</p>
+                        <!--<div class="">-->
+                        <!--    <button type="button" class="btn btn-xs btn-default btn-helloworld2" style="margin: 4px 0;">Hello World 2</button>-->
+                        <!--</div>-->
+                    </div>
+    
+                    <!-- Tab 2 -->
+                    <div class="tab-pane" id="com-chilipeppr-widget-claure-tab2">
+                        <p>SprintFreeMsg: will be prepended to every outbound message.</p>
+                    </div>
+    
+                    <!-- Tab 3 -->
+                    <div class="tab-pane" id="com-chilipeppr-widget-claure-tab3">
+                        <p>This is the content of tab 3.</p>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </div> <!-- panel-wrapper-->
     </div>
 </body>
 
