@@ -179,12 +179,23 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                      for (var i2 = 0; i2 < mutRec.addedNodes.length; i2++) {
                          var addedNode = mutRec.addedNodes[i2];
                          console.log("addedNode:", addedNode);
+                         
+                         // jquery-ize the addedNode to see if it is the compose box
+                         var el = $(addedNode);
+                         if (el && el.hasClass('zw-send-message-text')) {
+                             console.log("got a compose box. el:", el);
+                             this.onComposeBox(el);
+                         }
+                         
                          this.detectCreditCardOnNode(addedNode);
                      }
                  }
                  
             }
             
+        },
+        onComposeBox: function(el) {
+            console.log("onComposeBox. el:", el);
         },
         detectCreditCardOnNode: function(node) {
             
