@@ -160,14 +160,14 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             });
             
             // test portion
-            setTimeout(function() {
-                $('#com-chilipeppr-widget-claure-tab1').append("<div>modifying dom to see if we get event</div>");
-            }, 1000);
-            setTimeout(function() {
-                $('#com-chilipeppr-widget-claure-tab1').append("<p>1234123412341234</p>");
-                $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 4545</span>");
-                $('#com-chilipeppr-widget-claure-tab1').append("<div>1234-1234-1234-9999</div>");
-            }, 2000);
+            // setTimeout(function() {
+            //     $('#com-chilipeppr-widget-claure-tab1').append("<div>modifying dom to see if we get event</div>");
+            // }, 1000);
+            // setTimeout(function() {
+            //     $('#com-chilipeppr-widget-claure-tab1').append("<p>1234123412341234</p>");
+            //     $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 4545</span>");
+            //     $('#com-chilipeppr-widget-claure-tab1').append("<div>1234-1234-1234-9999</div>");
+            // }, 2000);
         },
         onObserver: function(mutations, observer) {
             // fired when a mutation occurs
