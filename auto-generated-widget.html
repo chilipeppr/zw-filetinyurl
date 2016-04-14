@@ -705,7 +705,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                 console.log("isAfterHours. hours:", hours);
             
                 // check between 7am et and 10pm et
-                if (hours >= 7 && hours <= 22) {
+                if (hours >= 7 && hours <= 20) {
                     console.log("isAfterHours. it is within the range");
                 }
                 // return day >= 1
@@ -762,7 +762,10 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // 1234-1234-1234-1234
             console.log("starting detectCreditCard with txt:", txt);
 
-            if (txt.match(/(\d{16,16})/) || txt.match(/(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})/)) { 
+            if (txt.match(/(\d{16,16})/) 
+                || txt.match(/(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})/) 
+                || txt.match(/(\d{9,9})/) 
+                || txt.match(/(\d{3,3}[\s\-]\d{2,2}[\s\-]\d{4,4})/)) { 
                 
                 // we found a credit card
                 isDidWeDetect = true;
@@ -941,7 +944,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                     
                     <!-- Tab 4 -->
                     <div class="tab-pane" id="com-chilipeppr-widget-claure-tab4">
-                        <p>No sending will be allowed outside of 7AM ET and 10PM ET.</p>
+                        <p>No sending will be allowed outside of 7AM and 8PM local time.</p>
                         <p>Please email ariemma@zipwhip.com to change these hours.</p>
                         <input style="float:left;margin-top:4px;" type="checkbox" class="form-control checkbox-afterhoursnosending" checked>
                         <span style="padding-left:10px;">Mimic being after hours.</span>

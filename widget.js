@@ -254,7 +254,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                 console.log("isAfterHours. hours:", hours);
             
                 // check between 7am et and 10pm et
-                if (hours >= 7 && hours <= 22) {
+                if (hours >= 7 && hours <= 20) {
                     console.log("isAfterHours. it is within the range");
                 }
                 // return day >= 1
@@ -311,7 +311,10 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // 1234-1234-1234-1234
             console.log("starting detectCreditCard with txt:", txt);
 
-            if (txt.match(/(\d{16,16})/) || txt.match(/(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})/)) { 
+            if (txt.match(/(\d{16,16})/) 
+                || txt.match(/(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})/) 
+                || txt.match(/(\d{9,9})/) 
+                || txt.match(/(\d{3,3}[\s\-]\d{2,2}[\s\-]\d{4,4})/)) { 
                 
                 // we found a credit card
                 isDidWeDetect = true;
