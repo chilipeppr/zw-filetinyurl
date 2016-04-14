@@ -246,8 +246,10 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // show the credit card reveal box
             var dialogEl = $('.creditcardreveal-password');
             dialogEl.find('.actual-creditcard').text(cc);
-            dialogEl.css('left', event.clientX);
-            dialogEl.css('top', event.clientY);
+            if (event.currentTarget && event.currentTarget.offsetLeft) {
+                dialogEl.css('left', event.currentTarget.offsetLeft);
+                dialogEl.css('top', event.currentTarget.offsetTop);
+            }
             dialogEl.removeClass('hidden');
             
             // reset bad password
