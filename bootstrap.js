@@ -1,7 +1,7 @@
 // This is a bootstrap file for the Claure Call Center Add-On Widget
 (function() {
     
-    alert("hi");
+    // alert("hi");
     
     function load(script) {
         //document.write('<'+'script src="'+script+'" type="text/javascript"><' + '/script>');
@@ -18,15 +18,15 @@
     load("//i2dcui.appspot.com/js/ssl_require.js");
 
     setTimeout(function() {
-        alert("Loading Claure Widget");
+        // alert("Loading Claure Widget");
         console.log("Loading Claure Settings Widget");
         cprequire(["chilipeppr_ready"], function() {
-            alert("inside of cprequire callback");
+            // alert("inside of cprequire callback");
             console.log("Seeing if Chilipeppr is globally defined...");
             console.log(chilipeppr);
             var dashEl = $('<div id="zw-dashboard-global-instantiation"></div>');
             $('body').append(dashEl);
-            // return;
+            return;
             var d = new Date();
             chilipeppr.load(
                 "#zw-dashboard-global-instantiation",
