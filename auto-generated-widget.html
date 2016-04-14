@@ -641,13 +641,28 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
                          
                          this.detectCreditCardOnNode(addedNode);
                      }
+                     
+                     // call onComposeBox all the time just to catch any possible DOM change
+                     // such that we should reset the enable/disable of the box
+                     this.onComposeBox();
                  }
                  
             }
             
         },
+        composeBoxEl: null,
         onComposeBox: function(el) {
             console.log("onComposeBox. el:", el);
+            
+            // we only get the compose box element once at the start
+            // so store it
+            if (this.composeBoxEl == null && el && el.hasClass('zw-send-message-text')) {
+                this.composeBoxEl = el;
+            } else {
+                el = this.composeBoxEl;
+            }
+            
+            if (el == null) return;
             
             el.val('SprintFreeMsg: ');
             console.log("onComposeBox. stuck SprintFreeMsg into textarea");
