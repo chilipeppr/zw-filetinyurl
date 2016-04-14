@@ -151,19 +151,76 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // and what types of mutations trigger the callback
             this.observer.observe(document, {
               subtree: true,
-              attributes: true
-              //...
+              attributes: true,
+              childList: true
             });
             
             // test portion
             setTimeout(function() {
-                $('#com-chilipeppr-widget-claure-tab1').append("modifying dom to see if we get event");
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>modifying dom to see if we get event</div>");
             }, 4000);
+            setTimeout(function() {
+                $('#com-chilipeppr-widget-claure-tab1').append("<p>1234123412341234</p>");
+                $('#com-chilipeppr-widget-claure-tab1').append("<span>1234 1234 1234 1234</span>");
+            }, 5000);
         },
         onObserver: function(mutations, observer) {
             // fired when a mutation occurs
             console.log("Got onObserver. mutations:", mutations, "observer:", observer);
-            // ...
+            for (var i = 0; i < mutations.length; i++) {
+                var mutRec = mutations[i];
+                 // now loop thru added nodes
+                 if ('addedNodes' in mutRec) {
+                     for (var i2 = 0; i2 < mutRec.addedNodes.length; i2++) {
+                         var addedNode = mutRec.addedNodes[i2];
+                         console.log("addedNode:", addedNode);
+                         this.detectCreditCardOnNode(addedNode);
+                     }
+                 }
+                 
+            }
+            
+        },
+        detectCreditCardOnNode: function(node) {
+            
+            if (node == null) return;
+            
+            var isDidWeDetect = false;
+            var txt;
+            
+            // create jquery version of node
+            var el = $(node);
+            console.log("el:", el);
+            
+            txt = el.text();
+            //if ('nodeValue' in node) txt = node.nodeValue;
+            //else txt = node;
+            
+            if (txt == null) {
+                console.log("txt is null, so returning.");
+                return;
+            }
+            
+            // look for formats
+            // 1234123412341234
+            // 1234 1234 1234 1234
+            // 1234-1234-1234-1234
+            console.log("starting detectCreditCard with txt:", txt);
+
+            if (txt.match(/(\d{16,16})/)) { 
+                
+                // we found a credit card
+                isDidWeDetect = true;
+                var cc = RegExp.$1;
+                var cclast4 = cc.substring(12, 16);
+                var newHtml = el.html().replace(/\d{16,16}/, "************" + cclast4);
+                el.html(newHtml);
+                
+            } else if (txt.match(/\d{4}[\s\-]\d{4}[\s\-]\d{4}[\s\-]\d{4}/)) {
+                
+            } 
+            console.log("ending detectCreditCard with txt:", txt);
+            return txt;
         },
         /**
          * The methods below were taken from the Dashboard made for Telerx but has good utility functions.
