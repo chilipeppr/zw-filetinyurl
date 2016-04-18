@@ -292,6 +292,9 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             
             if (node == null) return;
             
+            // make sure our node has the class we're after
+            //if (el.hasClass('zw-message-card-body') || el.hasClass(''))
+            
             var isDidWeDetect = false;
             var txt;
             
@@ -301,7 +304,14 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             if (el == null) return;
             if (el.html() == null) return;
             
-            txt = el.text();
+            // we are having problems getting too much text, so let's get innertext instead
+            //txt = el.text();
+            if (el.length > 0 && 'innerText' in el[0]) {
+                txt = el[0].innerText;
+            } else {
+                console.warn("there was no element in the node for credit card detect, so exiting.");
+                return;
+            }
             //if ('nodeValue' in node) txt = node.nodeValue;
             //else txt = node;
             
