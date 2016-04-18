@@ -259,7 +259,10 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             
                 // check between 7am et and 10pm et
                 if (hours >= 7 && hours <= 20) {
-                    console.log("isAfterHours. it is within the range");
+                    console.log("isAfterHours. it is within the hour range so we are safe to enable send");
+                    isAfter = false;
+                } else {
+                    console.log("isAfterHours. it is after hours. disabling compose box.");
                     isAfter = true;
                 }
                 // return day >= 1
