@@ -67,7 +67,7 @@ cprequire_test(["inline:com-chilipeppr-widget-claure"], function(myWidget) {
     );
 
     // init my widget
-    myWidget.init();
+    myWidget.init({mode:'marchex'});
     // $('#' + myWidget.id).css('margin', '20px');
     $('title').html(myWidget.name);
 
@@ -132,11 +132,12 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
          * instantiating code like a workspace or a different widget.
          */
         init: function(options, callback) {
-            console.log("I am being initted. Thanks.");
+            console.log("I am being initted. options:", options);
 
-            if (options && 'marchex' in options) {
+            if (options && 'mode' in options && options.mode == 'marchex') {
                 this.prefixMsg = "";
             }
+            $('#' + this.id + " .prefixMsg").text(this.prefixMsg);
 
             // this.loadBootstrapCss();
             this.setupCreditCardSocialSecCodeMonitoring();
