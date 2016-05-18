@@ -227,6 +227,8 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             
             if (el == null) return;
             
+            if (this.prefixMsg == null || this.prefixMsg == "") return;
+            
             el.val(this.prefixMsg);
             // console.log("onComposeBox. stuck SprintFreeMsg into textarea");
             
