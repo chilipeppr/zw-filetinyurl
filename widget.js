@@ -126,12 +126,17 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // that are owned by foreign/other widgets.
             // '/com-chilipeppr-elem-dragdrop/ondropped': 'Example: We subscribe to this signal at a higher priority to intercept the signal. We do not let it propagate by returning false.'
         },
+        prefixMsg: "SprintFreeMsg: ",
         /**
          * All widgets should have an init method. It should be run by the
          * instantiating code like a workspace or a different widget.
          */
-        init: function() {
+        init: function(options, callback) {
             console.log("I am being initted. Thanks.");
+
+            if (options && 'marchex' in options) {
+                this.prefixMsg = "";
+            }
 
             // this.loadBootstrapCss();
             this.setupCreditCardSocialSecCodeMonitoring();
@@ -140,6 +145,8 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // this.setupUiFromLocalStorage();
             // this.btnSetup();
             // this.forkSetup();
+
+            if (callback) callback();
 
             console.log("I am done being initted.");
         },
@@ -171,6 +178,8 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             }, 2000);
             setTimeout(function() {
                 $('#com-chilipeppr-widget-claure-tab1').append("<div>297-73-0844 is sample ssn</div>");
+                //3759 876543 21001
+                $('#com-chilipeppr-widget-claure-tab1').append("<div>3759 876543 21001 is sample Amex #</div>");
             }, 3000);
         },
         onObserver: function(mutations, observer) {
@@ -217,7 +226,7 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             
             if (el == null) return;
             
-            el.val('SprintFreeMsg: ');
+            el.val(this.prefixMsg);
             // console.log("onComposeBox. stuck SprintFreeMsg into textarea");
             
             // now check if after hours so we know to dim out the box or not
@@ -329,10 +338,14 @@ cpdefine("inline:com-chilipeppr-widget-claure", ["chilipeppr_ready", /* other de
             // 1234-1234-1234-1234
             console.log("starting detectCreditCard with txt:", txt);
 
-            if (txt.match(/\b(\d{16,16})\b/) 
-                || txt.match(/\b(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})\b/) 
-                || txt.match(/\b(\d{9,9})\b/) 
-                || txt.match(/\b(\d{3,3}[\s\-]\d{2,2}[\s\-]\d{4,4})\b/)) { 
+            if (
+                txt.match(/\b(\d{16,16})\b/) // 1234123412341234
+                || txt.match(/\b(\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4}[\s\-]\d{4,4})\b/) // 1234 1234 1234 1234 or 1234-1234-1234-1234
+                || txt.match(/\b(\d{9,9})\b/) // 297720811 ssn
+                || txt.match(/\b(\d{3,3}[\s\-]\d{2,2}[\s\-]\d{4,4})\b/) // 297-72-0811 ssn
+                || txt.match(/\b(\d{15,15})\b/) // 378282246310005 amex 15 digits
+                || txt.match(/\b(\d{4,4}[\s\-]\d{6,6}[\s\-]\d{5,5})\b/) // 3759 876543 21001 amex format
+                ) { 
                 
                 // we found a credit card
                 isDidWeDetect = true;

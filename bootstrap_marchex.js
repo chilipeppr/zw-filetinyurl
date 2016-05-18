@@ -40,7 +40,7 @@
                     cprequire(["inline:com-chilipeppr-widget-claure"], function(dashboard) {
                         console.log("Running " + dashboard.id);
 
-                        dashboard.init({ mode: 'sprint' }, function() {
+                        dashboard.init({ mode: 'marchex' }, function() {
                             console.log("Done loading Claure Widget. dashboard:", dashboard);
                         });
 
