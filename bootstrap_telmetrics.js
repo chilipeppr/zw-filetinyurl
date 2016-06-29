@@ -21,7 +21,7 @@
         // swap in telmetrics logo
         // http://www.telmetrics.com/skin/images/telmetrics-logo.svg
         /*
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAABqCAYAAACVikx+AAAAAXNSR…Q0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NAodAwb8P2k9lfWtzrwYAAAAAElFTkSuQmCC);
+        background-image: url(data:image/png;base64,...);
         background-position: left 0px !important;
         background-size: contain;
         */
