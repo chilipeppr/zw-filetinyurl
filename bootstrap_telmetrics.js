@@ -62,10 +62,10 @@
     setTimeout(function() {
         // alert("Loading Claure Widget");
         console.log("Loading Telmetrics Override. 1st try.");
-        if (!(cprequire)) {
+        if (typeof(cprequire) === 'undefined') {
             console.log("Loading Telmetrics Override. 2nd try.");
             setTimeout(function() {
-                if (!(cprequire)) {
+                if (typeof(cprequire) === 'undefined') {
                     console.log("Loading Telmetrics Override. 3rd try.");
                     setTimeout(function() {
                         cprequire(["chilipeppr_ready"], function() {
